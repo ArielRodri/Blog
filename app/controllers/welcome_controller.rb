@@ -1,8 +1,4 @@
-class welcomecontroller < ApplicationController
-	def index 
-		
-	end
-	def contactos
-		
-	end
+class WelcomeController < ApplicationController
+  def index
+  end
 end
