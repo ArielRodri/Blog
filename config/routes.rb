@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
- get "Welcome/index"
+  get "welcome/index"
+  get "welcome/contactos"
 end
