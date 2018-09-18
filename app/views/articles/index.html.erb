@@ -1,4 +1,4 @@
-<% @articulo.each do |articulo| %>
-<h1><%articulo.tittle %></h1>
-<p><%=articulo.body%></p>
+<% @articulos.each do |articulo| %>
+	<h1><%=articulo.tittle %></h1>
+	<p><%= articulo.body %></p>
 <%end%>
