@@ -1,4 +1,6 @@
 <% @articulos.each do |articulo| %>
 	<h1><%=articulo.tittle %></h1>
 	<p><%= articulo.body %></p>
+	<%a = Article.find(1)%> 
+	<%=a.tittle%>
 <%end%>
