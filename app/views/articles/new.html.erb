@@ -1,2 +1,8 @@
-<h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+<h1>Nuevo Articulo</h1>
+<%= form_with(model: @article) do |form|%>
+	<%= form.label "Titulo" %>
+	<%= form.text_field :title %>
+	<%= form.label "Cuerpo" %>
+	<%= form.text_area :body%>
+	<%= form.submit"Ok" %>
+	<%end%>
