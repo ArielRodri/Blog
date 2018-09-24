@@ -1,27 +1,40 @@
- class ArticlesController < ApplicationController
-  def new
-  	@Article = Article.new
-  end
-def create
-	@Article = Article.new(params[:Article])
-    if @Article.save
-      rediret_to @Article
-    else
-      rediret_to new
-  end
-  
+class ArticlesController < ApplicationController
+    before_action :set_article, only: [:show,:edit,:update]
+
+    def index
+      @articulos = Article.all
+end
+    def show
 end
 
-  def show
+  def new
+  	@article = Article.new
+end
+def create
+	@article = Article.new(article_params)
+    if @article.save
+      redirect_to @article
+    else
+      redirect_to :new
   end
+end
+  def edit
 
-  def index
-  	 @articulos = Article.all  
+end
+  def update
+    if @article.update(article_params)
+      redirect_to @article
+    else
+        render :edit 
+    end
+end
 
-  end 
+
   private	
   def article_params
-  	params.require(:Article).permit(:tittle, :body)
+  	params.require(:article).permit(:title, :body)
+end
+  def set_article
+    @Article = Article.find(params[:id])
   end
 end 
-  

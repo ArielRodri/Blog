@@ -1,8 +1,3 @@
 <h1>Nuevo Articulo</h1>
-<%= form_with(model: @article) do |form|%>
-	<%= form.label "Titulo" %>
-	<%= form.text_field :title %>
-	<%= form.label "Cuerpo" %>
-	<%= form.text_area :body%>
-	<%= form.submit"Ok" %>
-	<%end%>
+<h1>Editar Artculo</h1>
+<%= render "formulario" %>
