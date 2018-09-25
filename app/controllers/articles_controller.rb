@@ -5,20 +5,31 @@ class ArticlesController < ApplicationController
       @articles = Article.all
 end
     def show
-      @article = Article.find(params[:id])
+end
+def new
+  @article = Article.new
 end
 
-  def new
-  	@article = Article.new
-end
 def create
+
 	@article = Article.new(article_params)
-    if @article.save
-      redirect_to @article, notice: "Articulo #{@article.title} creado"
-    else
-      redirect_to :new
-  end
+  respond_to do |format|
+      if @article.save
+        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        format.json { render :show, status: :created, location: @article }
+      else
+        format.html { render :new }
+        format.json { render json: @article.errors, status: :unprocessable_entity }
+      end
+    end  
+    #if @article.save
+     # redirect_to @article, notice: "Articulo #{@article.tittle} creado"
+    #else
+   #   redirect_to :new
+  #end
+
 end
+
   def edit
 
 end

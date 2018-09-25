@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-	resources :articles
 
-  get "welcome/index"
+  resources :articles
+ 
+  root "welcome#index"
   get "welcome/contactos"
 end

@@ -1,0 +1,7 @@
+<% @articulos.each do |art| %>
+	<h3>
+		<a href="/articles/<%=art.id%>"title=""><%=art.tittle%></a>
+		<%= link_to art.tittle,art%>
+	</h3>
+	<p><%=art.tittle%></p>
+<%end%>
