@@ -2,9 +2,10 @@ class ArticlesController < ApplicationController
     before_action :set_article, only: [:show,:edit,:update]
 
     def index
-      @articulos = Article.all
+      @articles = Article.all
 end
     def show
+      @article = Article.find(params[:id])
 end
 
   def new
@@ -13,7 +14,7 @@ end
 def create
 	@article = Article.new(article_params)
     if @article.save
-      redirect_to @article
+      redirect_to @article, notice: "Articulo #{@article.title} creado"
     else
       redirect_to :new
   end
