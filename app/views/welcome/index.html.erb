@@ -1,7 +1,7 @@
+<%=link_to"Articulos",articles_path%>
 <% @articulos.each do |art| %>
-	<h3>
-		<a href="/articles/<%=art.id%>"title=""><%=art.tittle%></a>
+	<h1>
 		<%= link_to art.tittle,art%>
-	</h3>
-	<p><%=art.tittle%></p>
+	</h1>	
+
 <%end%>

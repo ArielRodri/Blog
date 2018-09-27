@@ -1,12 +1,7 @@
-<h1>All Articles</h1>
+<% @articulos.each do |articulo| %>
+	<h1><%= articulo.tittle %></h1>
+	<p><%= articulo.body %></p>
+ <%= link_to " Editar ", edit_article_path(articulo)%>
+ <%= link_to "Eliminar #{articulo.tittle}",articulo, method: :delete, data: {confirm: "¿Esta seguro de eliminar el Articulo? "}%>
 
-    <ul id="articles">
-    <% @articles.each do |article| %>
-        <li>
-            <%= link_to article.tittle, article_path(article), class: 'article_title', id: "article_#{article.id}" %>
-        </li>
-    <% end %>
-
-</ul>
-
-<%= link_to "Crear Nuevo Articulo", new_article_path, class: "new_article" %>
+<%end%>

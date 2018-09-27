@@ -1,5 +1,4 @@
-<h1><%= @Article.tittle %></h1>
-<p><%= @Article.body%></p>
-<%= link_to "<<Ir a la lista de creacion de Articulos", articles_path %>
-<%= link_to "Atràs", root_path%>
-<%= link_to "Editar", edit_article_path(@Article)%>
+<h1><%= @article.tittle%></h1>
+<p><%= @article.body%></p>
+<%= link_to "Editar", edit_article_path(@article) %>
+<%= link_to "Atras", root_path%>
