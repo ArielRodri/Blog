@@ -13,7 +13,29 @@
  *= require_tree .
  *= require_self
  */
+$title:#000;
+$fondo: #FFFFD3;
+$color-a: #F3F2B4;
+$color-b: #FFFFD3;
+$color-c: #F48060;
+$color-d: #C02727;
+$colors : (
+	title: $title,
+	fondo: $fondo,
+	color-a:$color-a,
+	color-b:$color-b,
+	color-c:$color-c,
+	color-d:$color-d
+);
 
 body{
-	background-color: #b1cbfa;
+	background-color: $fondo;
+}
+@each $color_name,$color in $colors{
+	.#($color-name){
+		background-color: $color !inportant;
+	}
+	.#($color-name)-text {
+		color: $color !inportant;
+	}
 }
