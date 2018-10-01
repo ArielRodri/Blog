@@ -1,7 +1,12 @@
+<h1>
 <%=link_to"Articulos",articles_path%>
+</h1>
 <% @articulos.each do |art| %>
-	<h1>
-		<%= link_to art.tittle,art,class:"fondo-text" %>
-	</h1>	
+	<div class="jumbotron">
+		<h2 class="text-center">
+			<%= link_to art.tittle,art,class:"fondo-text" %>
+		</h2>	
+<p class="text-center"><=%art.body</p>
+</div>
 
 <%end%>

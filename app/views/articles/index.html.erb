@@ -1,7 +1,12 @@
-<% @articulos.each do |articulo| %>
-	<h1><%= articulo.tittle %></h1>
-	<p><%= articulo.body %></p>
- <%= link_to " Editar ", edit_article_path(articulo)%>
- <%= link_to "Eliminar #{articulo.tittle}",articulo, method: :delete, data: {confirm: "¿Esta seguro de eliminar el Articulo? "}%>
-
+<div class="row">
+	<% @articulos.each do |articulo| %>
+		<div class= "coll-sm-12 col-md-6 col-lg-4">
+			<div class="jumbotron">
+				<h1><%= articulo.tittle %></h1>
+				<p><%= articulo.body %></p>
+ 				<%= link_to " Editar ", edit_article_path(articulo)%>
+ 				<%= link_to "Eliminar #{articulo.tittle}",articulo, method: :delete, data: {confirm: "¿Esta seguro de eliminar el Articulo? "}, class:"btn btn-danger"%>
+ 			</div>
+ 		</div>
 <%end%>
+</div>

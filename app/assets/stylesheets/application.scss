@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 $title:#000;
 $fondo: #FFFFD3;
 $color-a: #F3F2B4;
@@ -31,11 +32,15 @@ $colors : (
 body{
 	background-color: $fondo;
 }
+
 @each $color_name,$color in $colors{
 	.#($color-name){
-		background-color: $color !inportant;
+		background-color: $color !important;
 	}
-	.#($color-name)-text {
-		color: $color !inportant;
+	.#($color-name)-text{
+		color: $color !important;
 	}
+}
+.nav-link{
+	color: red;
 }
