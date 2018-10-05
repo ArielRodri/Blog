@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
 	def index 
 		@articulos = Article.all
 	end
-		def contactos
+		def contacto
 			@email = "ariel-roda@hotmail.com"
 	end
 end

@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :articles
   
   root "welcome#index"
-  get "welcome/contactos"
+  get "welcome/contacto"
 end
