@@ -21,6 +21,7 @@ $color-b: #FFFFD3;
 $color-c: #F48060;
 $color-d: #C02727;
 $colors : (
+	jumbotron:color-a,
 	title: $title,
 	fondo: $fondo,
 	color-a:$color-a,
@@ -34,13 +35,30 @@ body{
 }
 
 @each $color_name,$color in $colors{
-	($color-name){
-		background-color $color !important;
+	.#($color-name){
+		background-color: $color !important;
 	}
-	($color-name)-text{
+	.#($color-name)-text{
 		color: $color !important;
 	}
 }
 .nav-link{
-	color: red;
+	color: white !important;
+}
+.space-a{
+	margin-top: 15px ;
+}
+.space-title{
+	margin-top: 20px !important;
+	margin-bottom:  40px !important;
+}
+.space-label-right{
+	padding-right: 30px;
+}
+.form-title{
+	font-style: bold !important;
+}
+.col-form-label{
+	font-style: italic;
+	font-size: 18px;
 }
