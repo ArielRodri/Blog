@@ -35,10 +35,10 @@ body{
 }
 
 @each $color_name,$color in $colors{
-	.#($color-name){
+	.#{$color-name}{
 		background-color: $color !important;
 	}
-	.#($color-name)-text{
+	.#{$color-name}{
 		color: $color !important;
 	}
 }
