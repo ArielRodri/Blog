@@ -2,6 +2,6 @@ Rails.application.routes.draw do
   resources :categories
   resources :articles
   
-  root "welcome#index"
+  root "articles#index"
   get "welcome/contacto"
 end
