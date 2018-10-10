@@ -12,9 +12,6 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Pricing</a>
       </li>
-      <li class="nav-item">
-        <%= class="Contacto", welcome_contacto_path, class:"nav-link" %>
-      </li>
       <%if user_signed_in?%>
         <%link_to "Cerrar sesiòn", destroy_user_session_path, method: :delete, class:"nav-link"%>
         <%else%>

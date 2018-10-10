@@ -12,7 +12,9 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.new(article_params)
+    puts @article.user.id.to_yaml
+    raise @article.to_yaml
     respond_to do |format|
       if @article.save
         format.html {redirect_to @article, notice: "Articulo #{@article.tittle} Creado."}
