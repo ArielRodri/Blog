@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.json
   def create
-    @category = Category.new(article_params)
+    @category = current_user.categories.new(category_params)
     respond_to do |format|
       if @category.save
         format.html { redirect_to @category, notice: 'Category was successfully created.' }
@@ -68,6 +68,7 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
+      puts params.to_json
       params.require(:category).permit(:name, :color)
     end
 end
