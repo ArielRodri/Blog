@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 # Use SCSS for stylesheets
-
+gem 'bootstrap-sass'
 gem 'devise', '~>4.5.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
