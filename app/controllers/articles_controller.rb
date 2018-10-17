@@ -11,11 +11,12 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @categories = Category.all
   end
   def create
     @article = current_user.articles.new(article_params)
+    @article.categories = params[:categories]
     puts @article.user.id.to_yaml
-    raise @article.to_yaml
     respond_to do |format|
       if @article.save
         format.html {redirect_to @article, notice: "Articulo #{@article.tittle} Creado."}
@@ -48,7 +49,7 @@ end
   end
   private	
   def article_params
-  	params.require(:article).permit(:tittle, :body)
+  	params.require(:article).permit(:tittle, :body, :categories)
   end
   def set_article
     @article = Article.find(params[:id])
