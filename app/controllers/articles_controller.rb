@@ -1,12 +1,15 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show,:edit,:update,:destroy]
-  before_action :authenticate_user!, only: [:edit,:update,:destroy,:new,:create]
+  #before_action :authenticate_user!, only: [:edit,:update,:destroy,:new,:create]
   before_action :authenticate_editor!, only: [:create, :new, :update, :edit]
   before_action :authenticate_admin!, only: [:destoy]
   def index
       @articulos = Article.all
+      if user_signed_in? && current_user.is_editor? && !params.has_key?(:normal)
+        render :"admin_article"
+    end
   end
-  def show  
+  def show
   end
 
   def new

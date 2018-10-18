@@ -15,12 +15,13 @@
  */
 
 $title:#000;
-$fondo: #FFFFD3;
+$fondo: #FFF;
 $color-a: #F3F2B4;
 $color-b: #FFFFD3;
 $color-c: #F48060;
 $color-d: #C02727;
 $colors : (
+	white: #fff,
 	jumbotron:color-a,
 	title: $title,
 	fondo: $fondo,
@@ -72,4 +73,7 @@ nav{
 background: yellow;
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+.salto{
+	margin-bottom: :20px;
 }

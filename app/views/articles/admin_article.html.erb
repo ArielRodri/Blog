@@ -1,0 +1,30 @@
+<div class="jumbotron">
+	<h1>Administrador</h1>
+	<p>	<%=link_to "Normal",articles_path(normal:true), class:"btn btn-success salto"%></p>
+	<table class="table table-bordered">
+		<thead class="thead-dark">
+			<tr>
+				<th> Titulo </th>
+				<th> Cuerpo </th>
+				<th> Autor </th>
+				<th> Fecha creacion </th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody class="color-g">
+			<% @articulos.each do |art| %>
+			<tr class="white-text">
+				<td><%= art.title %></td>
+				<td><%= truncate art.body, length: 100%></td>
+				<td><%= art.user.email %></td>
+				<td><%= art.created_at %></td>
+				<td>
+					<%= link_to "Editar", edit_article_path(art),class:"btn btn-warning"%>
+					<%= link_to "Ver",art,class:"btn btn-info"%>
+					<%= link_to "Eliminar", art, method: :delete, info:{confirm: " ¿Deseas eliminarlo? "},class:"btn btn-danger"%>		
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
