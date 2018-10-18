@@ -5,8 +5,13 @@
 			<div class="jumbotron">
 					<h1><%=link_to articulo.title, articulo %></h1>
 					<p><%= truncate( articulo.body, length:450) %></p>
-					<% if user_signed_in? %>
-						<% if current_user.is_editor? %>
+						<% temporal = "Categorias: " %>
+					<p><% articulo.categories.each do |category|%></p>
+						<% tempora = "#{temporal} #{category.name} " %>
+						<% end %>
+					<p> <%= temporal %> </p>
+						<% if user_signed_in? %>
+							<% if current_user.is_editor? %>
 	 				<%= link_to " Editar ", edit_article_path(articulo), class:"btn btn-warning"%>
 	 			<%end%>
 	 				<%if current_user.is_admin?%>
